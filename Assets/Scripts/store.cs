@@ -10,12 +10,14 @@ public class store : MonoBehaviour
 
     int StoreCount;
     public Text StoreCountText;
+    public Text CurrentBalanceText;
 
     private void Start()
     {
         StoreCount = 1;
         CurrentBalance = 2.00f;
         BaseStoreCost = 1.50f;
+        CurrentBalanceText.text = CurrentBalance.ToString("C2");
     }
 
     private void Update()
@@ -30,5 +32,6 @@ public class store : MonoBehaviour
         StoreCount += 1;
         StoreCountText.text = StoreCount.ToString();
         CurrentBalance = CurrentBalance - BaseStoreCost;
+        CurrentBalanceText.text = CurrentBalance.ToString("C2");
     }
 }
