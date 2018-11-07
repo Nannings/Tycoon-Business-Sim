@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class store : MonoBehaviour
 {
     int StoreCount;
+    public Text StoreCountText;
 
     private void Start()
     {
@@ -19,5 +21,6 @@ public class store : MonoBehaviour
     public void BuyStoreOnClick()
     {
         StoreCount += 1;
+        StoreCountText.text = StoreCount.ToString();
     }
 }
