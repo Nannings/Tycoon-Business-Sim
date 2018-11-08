@@ -12,6 +12,7 @@ public class store : MonoBehaviour
     int StoreCount;
     public Text StoreCountText;
     public Text CurrentBalanceText;
+    public Slider ProgressSlider;
 
     float StoreTimer = 4f;
     float CurrentTimer = 0;
@@ -40,6 +41,7 @@ public class store : MonoBehaviour
                 CurrentBalanceText.text = CurrentBalance.ToString("C2");
             }
         }
+        ProgressSlider.value = CurrentTimer / StoreTimer;
     }
 
     public void BuyStoreOnClick()
@@ -56,6 +58,5 @@ public class store : MonoBehaviour
     {
         if (!StartTimer)
             StartTimer = true;
-
     }
 }
