@@ -24,4 +24,9 @@ public class gamemanager : MonoBehaviour
         CurrentBalance += amount;
         CurrentBalanceText.text = CurrentBalance.ToString("C2");
     }
+
+    public bool CanBuy(float AmtToSpend)
+    {
+        return AmtToSpend <= CurrentBalance;
+    }
 }

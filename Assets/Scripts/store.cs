@@ -42,8 +42,8 @@ public class store : MonoBehaviour
 
     public void BuyStoreOnClick()
     {
-        //if (BaseStoreCost > CurrentBalance)
-        //    return;
+        if (!Gamemanager.CanBuy(BaseStoreCost))
+            return;
         StoreCount += 1;
         StoreCountText.text = StoreCount.ToString();
         Gamemanager.AddToBalance(-BaseStoreCost);
