@@ -10,7 +10,7 @@ public class gamemanager : MonoBehaviour
 
     private void Start()
     {
-        CurrentBalance = 2.00f;
+        CurrentBalance = 6.00f;
         CurrentBalanceText.text = CurrentBalance.ToString("C2");
     }
 

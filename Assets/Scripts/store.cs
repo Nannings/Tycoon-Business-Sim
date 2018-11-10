@@ -5,23 +5,22 @@ using UnityEngine.UI;
 
 public class store : MonoBehaviour
 {
-    float BaseStoreCost;
-    float BaseStoreProfit;
+    public float BaseStoreCost;
+    public float BaseStoreProfit;
+    public float StoreTimer = 4f;
+    public int StoreCount;
 
-    int StoreCount;
     public Text StoreCountText;
+
     public Slider ProgressSlider;
     public gamemanager Gamemanager;
 
-    float StoreTimer = 4f;
     float CurrentTimer = 0;
     bool StartTimer;
 
     private void Start()
     {
-        StoreCount = 1;
-        BaseStoreCost = 1.50f;
-        BaseStoreProfit = .50f;
+        StoreCountText.text = StoreCount.ToString();
         StartTimer = false;
     }
 
