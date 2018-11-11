@@ -353,6 +353,8 @@ MonoBehaviour:
   BaseStoreProfit: 1
   StoreTimer: 6
   StoreCount: 0
+  ManagerUnlocked: 0
+  StoreMultiplier: 0
   StoreCountText: {fileID: 1834423366}
   ProgressSlider: {fileID: 375349193}
   Gamemanager: {fileID: 302794746}
@@ -2111,6 +2113,8 @@ MonoBehaviour:
   BaseStoreProfit: 0.75
   StoreTimer: 3
   StoreCount: 1
+  ManagerUnlocked: 0
+  StoreMultiplier: 1.1
   StoreCountText: {fileID: 2132607628}
   ProgressSlider: {fileID: 1983856371}
   Gamemanager: {fileID: 302794746}
@@ -3187,6 +3191,8 @@ MonoBehaviour:
   BaseStoreProfit: 86
   StoreTimer: 60
   StoreCount: 0
+  ManagerUnlocked: 0
+  StoreMultiplier: 0
   StoreCountText: {fileID: 963655565}
   ProgressSlider: {fileID: 944217990}
   Gamemanager: {fileID: 302794746}
@@ -4463,6 +4469,8 @@ MonoBehaviour:
   BaseStoreProfit: 6
   StoreTimer: 12
   StoreCount: 0
+  ManagerUnlocked: 0
+  StoreMultiplier: 0
   StoreCountText: {fileID: 1677776503}
   ProgressSlider: {fileID: 392510222}
   Gamemanager: {fileID: 302794746}
@@ -5401,6 +5409,8 @@ MonoBehaviour:
   BaseStoreProfit: 15
   StoreTimer: 30
   StoreCount: 0
+  ManagerUnlocked: 0
+  StoreMultiplier: 0
   StoreCountText: {fileID: 1345726776}
   ProgressSlider: {fileID: 830202305}
   Gamemanager: {fileID: 302794746}
@@ -5726,6 +5736,8 @@ MonoBehaviour:
   BaseStoreProfit: 750
   StoreTimer: 360
   StoreCount: 0
+  ManagerUnlocked: 0
+  StoreMultiplier: 0
   StoreCountText: {fileID: 2029954311}
   ProgressSlider: {fileID: 142094202}
   Gamemanager: {fileID: 302794746}

@@ -10,12 +10,14 @@ public class store : MonoBehaviour
     public float StoreTimer = 4f;
     public int StoreCount;
     public bool ManagerUnlocked;
+    public float StoreMultiplier;
 
     public Text StoreCountText;
 
     public Slider ProgressSlider;
     public gamemanager Gamemanager;
 
+    private float NextStoreCost;
     float CurrentTimer = 0;
     bool StartTimer;
 
@@ -23,6 +25,7 @@ public class store : MonoBehaviour
     {
         StoreCountText.text = StoreCount.ToString();
         StartTimer = false;
+        NextStoreCost = BaseStoreCost;
     }
 
     private void Update()
@@ -43,11 +46,13 @@ public class store : MonoBehaviour
 
     public void BuyStoreOnClick()
     {
-        if (!Gamemanager.CanBuy(BaseStoreCost))
+        if (!Gamemanager.CanBuy(NextStoreCost))
             return;
         StoreCount += 1;
         StoreCountText.text = StoreCount.ToString();
-        Gamemanager.AddToBalance(-BaseStoreCost);
+        Gamemanager.AddToBalance(-NextStoreCost);
+        NextStoreCost = (BaseStoreCost * Mathf.Pow(StoreMultiplier, StoreCount));
+        
     }
 
     public void StoreOnClick()
