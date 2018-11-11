@@ -9,6 +9,7 @@ public class store : MonoBehaviour
     public float BaseStoreProfit;
     public float StoreTimer = 4f;
     public int StoreCount;
+    public bool ManagerUnlocked;
 
     public Text StoreCountText;
 
@@ -31,7 +32,8 @@ public class store : MonoBehaviour
             CurrentTimer += Time.deltaTime;
             if(CurrentTimer > StoreTimer)
             {
-                StartTimer = false;
+                if(!ManagerUnlocked)
+                    StartTimer = false;
                 CurrentTimer = 0;
                 Gamemanager.AddToBalance(BaseStoreProfit * StoreCount);
             }

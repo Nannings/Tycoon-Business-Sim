@@ -2110,7 +2110,7 @@ MonoBehaviour:
   BaseStoreCost: 2
   BaseStoreProfit: 0.75
   StoreTimer: 3
-  StoreCount: 0
+  StoreCount: 1
   StoreCountText: {fileID: 2132607628}
   ProgressSlider: {fileID: 1983856371}
   Gamemanager: {fileID: 302794746}
