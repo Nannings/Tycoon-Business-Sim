@@ -16,6 +16,7 @@ public class store : MonoBehaviour
 
     public Slider ProgressSlider;
     public gamemanager Gamemanager;
+    public Text BuyButtonText;
 
     private float NextStoreCost;
     float CurrentTimer = 0;
@@ -26,6 +27,12 @@ public class store : MonoBehaviour
         StoreCountText.text = StoreCount.ToString();
         StartTimer = false;
         NextStoreCost = BaseStoreCost;
+        BuyButtonUpdate();
+    }
+
+    private void BuyButtonUpdate()
+    {
+        BuyButtonText.text = "Buy " + NextStoreCost.ToString("C2");
     }
 
     private void Update()
@@ -52,7 +59,7 @@ public class store : MonoBehaviour
         StoreCountText.text = StoreCount.ToString();
         Gamemanager.AddToBalance(-NextStoreCost);
         NextStoreCost = (BaseStoreCost * Mathf.Pow(StoreMultiplier, StoreCount));
-        
+        BuyButtonUpdate();
     }
 
     public void StoreOnClick()

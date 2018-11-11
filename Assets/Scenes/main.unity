@@ -331,7 +331,7 @@ RectTransform:
   - {fileID: 478334274}
   - {fileID: 375349192}
   m_Father: {fileID: 169179876}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -354,10 +354,11 @@ MonoBehaviour:
   StoreTimer: 6
   StoreCount: 0
   ManagerUnlocked: 0
-  StoreMultiplier: 0
+  StoreMultiplier: 1.3
   StoreCountText: {fileID: 1834423366}
   ProgressSlider: {fileID: 375349193}
   Gamemanager: {fileID: 302794746}
+  BuyButtonText: {fileID: 1513809456}
 --- !u!114 &100139922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,8 +427,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 64.28, y: -25.9}
-  m_SizeDelta: {x: 77.24, y: 30}
+  m_AnchoredPosition: {x: 39.5, y: -25.9}
+  m_SizeDelta: {x: 126.7, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &110265325
 MonoBehaviour:
@@ -684,7 +685,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1394926545}
   - {fileID: 495443075}
   - {fileID: 100139920}
   - {fileID: 1690523178}
@@ -733,8 +733,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 64.28, y: -25.9}
-  m_SizeDelta: {x: 77.24, y: 30}
+  m_AnchoredPosition: {x: 39.5, y: -25.9}
+  m_SizeDelta: {x: 126.7, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &169444891
 MonoBehaviour:
@@ -1069,8 +1069,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 64.28, y: -25.9}
-  m_SizeDelta: {x: 77.24, y: 30}
+  m_AnchoredPosition: {x: 39.5, y: -25.9}
+  m_SizeDelta: {x: 126.7, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &252746353
 MonoBehaviour:
@@ -1467,8 +1467,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 64.28, y: -25.9}
-  m_SizeDelta: {x: 77.24, y: 30}
+  m_AnchoredPosition: {x: 39.5, y: -25.9}
+  m_SizeDelta: {x: 126.7, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &392004493
 MonoBehaviour:
@@ -2056,8 +2056,9 @@ RectTransform:
   - {fileID: 2132607627}
   - {fileID: 2092708661}
   - {fileID: 1983856370}
+  - {fileID: 1394926545}
   m_Father: {fileID: 169179876}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2118,6 +2119,7 @@ MonoBehaviour:
   StoreCountText: {fileID: 2132607628}
   ProgressSlider: {fileID: 1983856371}
   Gamemanager: {fileID: 302794746}
+  BuyButtonText: {fileID: 907097795}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2996,7 +2998,7 @@ GameObject:
   - component: {fileID: 907097796}
   - component: {fileID: 907097795}
   m_Layer: 5
-  m_Name: Text
+  m_Name: BuyButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3169,7 +3171,7 @@ RectTransform:
   - {fileID: 858107983}
   - {fileID: 944217989}
   m_Father: {fileID: 169179876}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3192,10 +3194,11 @@ MonoBehaviour:
   StoreTimer: 60
   StoreCount: 0
   ManagerUnlocked: 0
-  StoreMultiplier: 0
+  StoreMultiplier: 1.6
   StoreCountText: {fileID: 963655565}
   ProgressSlider: {fileID: 944217990}
   Gamemanager: {fileID: 302794746}
+  BuyButtonText: {fileID: 287965126}
 --- !u!114 &937693273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3757,8 +3760,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 64.28, y: -25.9}
-  m_SizeDelta: {x: 77.24, y: 30}
+  m_AnchoredPosition: {x: 39.5, y: -25.9}
+  m_SizeDelta: {x: 126.7, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1356386543
 MonoBehaviour:
@@ -3938,16 +3941,16 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1394926544}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 169179876}
-  m_RootOrder: 0
+  m_Father: {fileID: 495443075}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000076294, y: 141}
+  m_AnchoredPosition: {x: 225.59998, y: 20.800003}
   m_SizeDelta: {x: 300.8, y: 53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1394926546
@@ -4447,7 +4450,7 @@ RectTransform:
   - {fileID: 1490143375}
   - {fileID: 392510221}
   m_Father: {fileID: 169179876}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4470,10 +4473,11 @@ MonoBehaviour:
   StoreTimer: 12
   StoreCount: 0
   ManagerUnlocked: 0
-  StoreMultiplier: 0
+  StoreMultiplier: 1.4
   StoreCountText: {fileID: 1677776503}
   ProgressSlider: {fileID: 392510222}
   Gamemanager: {fileID: 302794746}
+  BuyButtonText: {fileID: 1355920585}
 --- !u!114 &1690523180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5042,8 +5046,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 64.28, y: -25.9}
-  m_SizeDelta: {x: 77.24, y: 30}
+  m_AnchoredPosition: {x: 39.5, y: -25.9}
+  m_SizeDelta: {x: 126.7, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1894661256
 MonoBehaviour:
@@ -5387,7 +5391,7 @@ RectTransform:
   - {fileID: 668420279}
   - {fileID: 830202304}
   m_Father: {fileID: 169179876}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5410,10 +5414,11 @@ MonoBehaviour:
   StoreTimer: 30
   StoreCount: 0
   ManagerUnlocked: 0
-  StoreMultiplier: 0
+  StoreMultiplier: 1.5
   StoreCountText: {fileID: 1345726776}
   ProgressSlider: {fileID: 830202305}
   Gamemanager: {fileID: 302794746}
+  BuyButtonText: {fileID: 181598369}
 --- !u!114 &1984135113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5714,7 +5719,7 @@ RectTransform:
   - {fileID: 479806631}
   - {fileID: 142094201}
   m_Father: {fileID: 169179876}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5737,10 +5742,11 @@ MonoBehaviour:
   StoreTimer: 360
   StoreCount: 0
   ManagerUnlocked: 0
-  StoreMultiplier: 0
+  StoreMultiplier: 1.7
   StoreCountText: {fileID: 2029954311}
   ProgressSlider: {fileID: 142094202}
   Gamemanager: {fileID: 302794746}
+  BuyButtonText: {fileID: 637853846}
 --- !u!114 &2100650251
 MonoBehaviour:
   m_ObjectHideFlags: 0
