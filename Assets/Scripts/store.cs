@@ -17,6 +17,7 @@ public class store : MonoBehaviour
     public Slider ProgressSlider;
     public gamemanager Gamemanager;
     public Text BuyButtonText;
+    public Button BuyButton;
 
     private float NextStoreCost;
     float CurrentTimer = 0;
@@ -49,6 +50,15 @@ public class store : MonoBehaviour
             }
         }
         ProgressSlider.value = CurrentTimer / StoreTimer;
+        CheckStoreBuy();
+    }
+
+    public void CheckStoreBuy()
+    {
+        if (Gamemanager.CanBuy(NextStoreCost))
+            BuyButton.interactable = true;
+        else
+            BuyButton.interactable = false;
     }
 
     public void BuyStoreOnClick()
