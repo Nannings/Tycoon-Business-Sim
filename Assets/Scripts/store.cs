@@ -11,6 +11,7 @@ public class store : MonoBehaviour
     public int StoreCount;
     public bool ManagerUnlocked;
     public float StoreMultiplier;
+    public bool StoreUnlocked;
 
     public Text StoreCountText;
 
@@ -55,6 +56,19 @@ public class store : MonoBehaviour
 
     public void CheckStoreBuy()
     {
+        CanvasGroup cg = transform.GetComponent<CanvasGroup>();
+        if (!StoreUnlocked && !Gamemanager.CanBuy(NextStoreCost))
+        {
+            cg.interactable = false;
+            cg.alpha = 0;
+        }
+        else
+        {
+            cg.interactable = true;
+            cg.alpha = 1;
+            StoreUnlocked = true;
+        }
+
         if (Gamemanager.CanBuy(NextStoreCost))
             BuyButton.interactable = true;
         else
