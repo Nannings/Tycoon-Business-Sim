@@ -5,19 +5,17 @@ using UnityEngine.UI;
 
 public class gamemanager : MonoBehaviour
 {
+    public delegate void UpdateBalance();
+    public static event UpdateBalance OnUpdateBalance;
+
     public static gamemanager instance;
     float CurrentBalance;
-    public Text CurrentBalanceText;
 
     private void Start()
     {
         CurrentBalance = 6.00f;
-        CurrentBalanceText.text = CurrentBalance.ToString("C2");
-    }
-
-    private void Update()
-    {
-        
+        if (OnUpdateBalance != null)
+            OnUpdateBalance();
     }
 
     private void Awake()
@@ -31,11 +29,17 @@ public class gamemanager : MonoBehaviour
     public void AddToBalance(float amount)
     {
         CurrentBalance += amount;
-        CurrentBalanceText.text = CurrentBalance.ToString("C2");
+        if (OnUpdateBalance != null)
+            OnUpdateBalance();
     }
 
     public bool CanBuy(float AmtToSpend)
     {
         return AmtToSpend <= CurrentBalance;
+    }
+
+    public float GetCurrentBalance()
+    {
+        return CurrentBalance;
     }
 }
