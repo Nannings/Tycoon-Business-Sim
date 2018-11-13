@@ -12,6 +12,7 @@ public class store : MonoBehaviour
     public bool ManagerUnlocked;
     public float StoreMultiplier;
     public bool StoreUnlocked;
+    public int StoreTimerDivision = 20;
 
     public Text StoreCountText;
 
@@ -83,12 +84,14 @@ public class store : MonoBehaviour
         StoreCountText.text = StoreCount.ToString();
         Gamemanager.AddToBalance(-NextStoreCost);
         NextStoreCost = (BaseStoreCost * Mathf.Pow(StoreMultiplier, StoreCount));
+        if (StoreCount % StoreTimerDivision == 0)
+            StoreTimer = StoreTimer / 2;
         BuyButtonUpdate();
     }
 
     public void StoreOnClick()
     {
-        if (!StartTimer)
+        if (!StartTimer && StoreCount > 0)
             StartTimer = true;
     }
 }
