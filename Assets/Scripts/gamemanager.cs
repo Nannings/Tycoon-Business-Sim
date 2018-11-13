@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class gamemanager : MonoBehaviour
 {
+    public static gamemanager instance;
     float CurrentBalance;
     public Text CurrentBalanceText;
 
@@ -17,6 +18,14 @@ public class gamemanager : MonoBehaviour
     private void Update()
     {
         
+    }
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
     }
 
     public void AddToBalance(float amount)

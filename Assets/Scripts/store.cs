@@ -17,7 +17,6 @@ public class store : MonoBehaviour
     public Text StoreCountText;
 
     public Slider ProgressSlider;
-    public gamemanager Gamemanager;
     public Text BuyButtonText;
     public Button BuyButton;
 
@@ -48,7 +47,7 @@ public class store : MonoBehaviour
                 if(!ManagerUnlocked)
                     StartTimer = false;
                 CurrentTimer = 0;
-                Gamemanager.AddToBalance(BaseStoreProfit * StoreCount);
+                gamemanager.instance.AddToBalance(BaseStoreProfit * StoreCount);
             }
         }
         ProgressSlider.value = CurrentTimer / StoreTimer;
@@ -58,7 +57,7 @@ public class store : MonoBehaviour
     public void CheckStoreBuy()
     {
         CanvasGroup cg = transform.GetComponent<CanvasGroup>();
-        if (!StoreUnlocked && !Gamemanager.CanBuy(NextStoreCost))
+        if (!StoreUnlocked && !gamemanager.instance.CanBuy(NextStoreCost))
         {
             cg.interactable = false;
             cg.alpha = 0;
@@ -70,7 +69,7 @@ public class store : MonoBehaviour
             StoreUnlocked = true;
         }
 
-        if (Gamemanager.CanBuy(NextStoreCost))
+        if (gamemanager.instance.CanBuy(NextStoreCost))
             BuyButton.interactable = true;
         else
             BuyButton.interactable = false;
@@ -78,11 +77,11 @@ public class store : MonoBehaviour
 
     public void BuyStoreOnClick()
     {
-        if (!Gamemanager.CanBuy(NextStoreCost))
+        if (!gamemanager.instance.CanBuy(NextStoreCost))
             return;
         StoreCount += 1;
         StoreCountText.text = StoreCount.ToString();
-        Gamemanager.AddToBalance(-NextStoreCost);
+        gamemanager.instance.AddToBalance(-NextStoreCost);
         NextStoreCost = (BaseStoreCost * Mathf.Pow(StoreMultiplier, StoreCount));
         if (StoreCount % StoreTimerDivision == 0)
             StoreTimer = StoreTimer / 2;
