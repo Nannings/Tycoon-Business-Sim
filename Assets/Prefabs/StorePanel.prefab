@@ -192,8 +192,9 @@ GameObject:
   - component: {fileID: 114713309195747730}
   - component: {fileID: 114151073080016642}
   - component: {fileID: 225047584852902256}
+  - component: {fileID: 114406508284093572}
   m_Layer: 5
-  m_Name: LemonadePanel
+  m_Name: StorePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -265,15 +266,16 @@ MonoBehaviour:
   BaseStoreCost: 2
   BaseStoreProfit: 0.75
   StoreTimer: 3
-  StoreCount: 1
+  StoreCount: 0
   ManagerUnlocked: 0
   StoreMultiplier: 1.1
   StoreUnlocked: 0
+  StoreTimerDivision: 5
   StoreCountText: {fileID: 114390088472162712}
   ProgressSlider: {fileID: 114979807666952816}
-  Gamemanager: {fileID: 0}
   BuyButtonText: {fileID: 114337373573856628}
   BuyButton: {fileID: 114127354712792302}
+  CurrentTimer: 0
 --- !u!114 &114165863722120312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -452,6 +454,22 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 1
+--- !u!114 &114406508284093572
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1953211569057458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6f90f10bbdc0546a3fdfdb596f68dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StoreCountText: {fileID: 114390088472162712}
+  ProgressSlider: {fileID: 114979807666952816}
+  BuyButtonText: {fileID: 114337373573856628}
+  BuyButton: {fileID: 114127354712792302}
+  Store: {fileID: 0}
 --- !u!114 &114442202215139062
 MonoBehaviour:
   m_ObjectHideFlags: 1

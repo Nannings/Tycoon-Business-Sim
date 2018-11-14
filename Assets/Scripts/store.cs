@@ -21,7 +21,7 @@ public class store : MonoBehaviour
     public Button BuyButton;
 
     private float NextStoreCost;
-    float CurrentTimer = 0;
+    public float CurrentTimer = 0;
     bool StartTimer;
 
     private void Start()
@@ -50,7 +50,7 @@ public class store : MonoBehaviour
                 gamemanager.instance.AddToBalance(BaseStoreProfit * StoreCount);
             }
         }
-        ProgressSlider.value = CurrentTimer / StoreTimer;
+        
         CheckStoreBuy();
     }
 
