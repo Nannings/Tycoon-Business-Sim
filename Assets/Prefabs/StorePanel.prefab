@@ -239,7 +239,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114151073080016642}
+      - m_Target: {fileID: 114406508284093572}
         m_MethodName: BuyStoreOnClick
         m_Mode: 1
         m_Arguments:
@@ -271,11 +271,9 @@ MonoBehaviour:
   StoreMultiplier: 1.1
   StoreUnlocked: 0
   StoreTimerDivision: 5
-  StoreCountText: {fileID: 114390088472162712}
-  ProgressSlider: {fileID: 114979807666952816}
-  BuyButtonText: {fileID: 114337373573856628}
-  BuyButton: {fileID: 114127354712792302}
+  NextStoreCost: 0
   CurrentTimer: 0
+  StartTimer: 0
 --- !u!114 &114165863722120312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -342,8 +340,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114151073080016642}
-        m_MethodName: StoreOnClick
+      - m_Target: {fileID: 114406508284093572}
+        m_MethodName: OnTimerClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -757,10 +757,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1953211569057458, guid: a2716cf5188960741939b2b57eb2dc10, type: 2}
-      propertyPath: m_Name
-      value: StorePanel
-      objectReference: {fileID: 0}
     - target: {fileID: 224870918421597754, guid: a2716cf5188960741939b2b57eb2dc10,
         type: 2}
       propertyPath: m_AnchorMax.y
