@@ -35,13 +35,13 @@ public class UIStore : MonoBehaviour
 
     private void Update()
     {
-        ProgressSlider.value = Store.CurrentTimer / Store.StoreTimer;
+        ProgressSlider.value = Store.GetCurrentTimer() / Store.GetStoreTimer();
     }
 
     public void UpdateUI()
     {
         CanvasGroup cg = transform.GetComponent<CanvasGroup>();
-        if (!Store.StoreUnlocked && !gamemanager.instance.CanBuy(Store.NextStoreCost))
+        if (!Store.StoreUnlocked && !gamemanager.instance.CanBuy(Store.GetNextStoreCost()))
         {
             cg.interactable = false;
             cg.alpha = 0;
@@ -53,17 +53,17 @@ public class UIStore : MonoBehaviour
             Store.StoreUnlocked = true;
         }
 
-        if (gamemanager.instance.CanBuy(Store.NextStoreCost))
+        if (gamemanager.instance.CanBuy(Store.GetNextStoreCost()))
             BuyButton.interactable = true;
         else
             BuyButton.interactable = false;
 
-        BuyButtonText.text = "Buy " + Store.NextStoreCost.ToString("C2");
+        BuyButtonText.text = "Buy " + Store.GetNextStoreCost().ToString("C2");
     }
 
     public void BuyStoreOnClick()
     {
-        if (!gamemanager.instance.CanBuy(Store.NextStoreCost))
+        if (!gamemanager.instance.CanBuy(Store.GetNextStoreCost()))
             return;
         Store.BuyStore();
         StoreCountText.text = Store.StoreCount.ToString();

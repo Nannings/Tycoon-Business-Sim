@@ -7,20 +7,35 @@ public class store : MonoBehaviour
 {
     public float BaseStoreCost;
     public float BaseStoreProfit;
-    public float StoreTimer = 4f;
+    float StoreTimer = 4f;
     public int StoreCount;
     public bool ManagerUnlocked;
     public float StoreMultiplier;
     public bool StoreUnlocked;
     public int StoreTimerDivision = 20;
-    public float NextStoreCost;
-    public float CurrentTimer = 0;
+    float NextStoreCost;
+    float CurrentTimer = 0;
     public bool StartTimer;
 
     private void Start()
     {
         StartTimer = false;
         NextStoreCost = BaseStoreCost;
+    }
+
+    public float GetNextStoreCost()
+    {
+        return NextStoreCost;
+    }
+
+    public float GetCurrentTimer()
+    {
+        return CurrentTimer;
+    }
+
+    public float GetStoreTimer()
+    {
+        return StoreTimer;
     }
 
     private void Update()
