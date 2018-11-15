@@ -41,8 +41,11 @@ public class store : MonoBehaviour
     public void BuyStore()
     {
         StoreCount += 1;
-        gamemanager.instance.AddToBalance(-NextStoreCost);
+
+        float Amt = -NextStoreCost;
         NextStoreCost = (BaseStoreCost * Mathf.Pow(StoreMultiplier, StoreCount));
+        gamemanager.instance.AddToBalance(Amt);
+
         if (StoreCount % StoreTimerDivision == 0)
             StoreTimer = StoreTimer / 2;
     }

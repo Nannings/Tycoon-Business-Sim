@@ -13,15 +13,29 @@ public class UIStore : MonoBehaviour
 
     public store Store;
 
+    private void OnEnable()
+    {
+        gamemanager.OnUpdateBalance += UpdateUI;
+    }
+
+    private void OnDisable()
+    {
+        gamemanager.OnUpdateBalance -= UpdateUI;
+    }
+
     private void Awake()
     {
         Store = GetComponent<store>();
     }
 
+    private void Start()
+    {
+        StoreCountText.text = Store.StoreCount.ToString();
+    }
+
     private void Update()
     {
         ProgressSlider.value = Store.CurrentTimer / Store.StoreTimer;
-        UpdateUI();
     }
 
     public void UpdateUI()
@@ -45,7 +59,6 @@ public class UIStore : MonoBehaviour
             BuyButton.interactable = false;
 
         BuyButtonText.text = "Buy " + Store.NextStoreCost.ToString("C2");
-        StoreCountText.text = Store.StoreCount.ToString();
     }
 
     public void BuyStoreOnClick()
@@ -53,6 +66,8 @@ public class UIStore : MonoBehaviour
         if (!gamemanager.instance.CanBuy(Store.NextStoreCost))
             return;
         Store.BuyStore();
+        StoreCountText.text = Store.StoreCount.ToString();
+        UpdateUI();
     }
 
     public void OnTimerClick()
