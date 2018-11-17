@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 225047584852902256}
   - component: {fileID: 114406508284093572}
   m_Layer: 5
-  m_Name: StorePanel
+  m_Name: StorePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -265,14 +265,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseStoreCost: 2
   BaseStoreProfit: 0.75
-  StoreTimer: 3
   StoreCount: 0
   ManagerUnlocked: 0
   StoreMultiplier: 1.1
   StoreUnlocked: 0
   StoreTimerDivision: 5
-  NextStoreCost: 0
-  CurrentTimer: 0
   StartTimer: 0
 --- !u!114 &114165863722120312
 MonoBehaviour:

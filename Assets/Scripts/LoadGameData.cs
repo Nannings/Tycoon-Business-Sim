@@ -6,10 +6,12 @@ using UnityEngine;
 public class LoadGameData : MonoBehaviour
 {
     public TextAsset GameData;
+    public GameObject StorePrefab;
+    public GameObject StorePanel;
 
     private void Start()
     {
-        Invoke("LoadData", .1f);
+        LoadData();
     }
 
     public void LoadData()
@@ -22,11 +24,27 @@ public class LoadGameData : MonoBehaviour
 
         foreach (XmlNode StoreInfo in StoreList)
         {
+            GameObject NewStore = (GameObject)Instantiate(StorePrefab);
+
+            store storeobj = NewStore.GetComponent<store>();
+
             XmlNodeList StoreNodes = StoreInfo.ChildNodes;
             foreach (XmlNode StoreNode in StoreNodes)
             {
-                Debug.Log(StoreNode.Name);
-                Debug.Log(StoreNode.InnerText);
+                if (StoreNode.Name == "BaseStoreCost")
+                {
+                    storeobj.BaseStoreCost = float.Parse(StoreNode.InnerText);
+                }
+                if (StoreNode.Name == "BaseStoreProfit")
+                {
+                    storeobj.BaseStoreProfit = float.Parse(StoreNode.InnerText);
+                }
+                if (StoreNode.Name == "StoreTimer")
+                {
+                    storeobj.time = float.Parse(StoreNode.InnerText);
+                }
+
+                NewStore.transform.SetParent(StorePanel.transform);
             }
         }
     }
