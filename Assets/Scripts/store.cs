@@ -7,12 +7,12 @@ public class store : MonoBehaviour
 {
     public float BaseStoreCost;
     public float BaseStoreProfit;
-    public float StoreTimer = 4f;
+    public float StoreTimer;
     public int StoreCount;
     public bool ManagerUnlocked;
     public float StoreMultiplier;
     public bool StoreUnlocked;
-    public int StoreTimerDivision = 20;
+    public int StoreTimerDivision;
     float NextStoreCost;
     float CurrentTimer = 0;
     public bool StartTimer;

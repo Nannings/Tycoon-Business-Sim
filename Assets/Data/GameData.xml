@@ -5,12 +5,18 @@
     <BaseStoreProfit>.5</BaseStoreProfit>
     <StoreTimer>5</StoreTimer>
     <image>shop</image>
+    <StoreMultiplier>1.1</StoreMultiplier>
+    <StoreTimerDivision>5</StoreTimerDivision>
+    <StoreCount>1</StoreCount>
   </store>
   <store>
     <name>Supermarket</name>
-    <BaseStoreCost>5</BaseStoreCost>
+    <BaseStoreCost>10</BaseStoreCost>
     <BaseStoreProfit>2</BaseStoreProfit>
     <StoreTimer>12</StoreTimer>
     <image>coffee-shop</image>
+    <StoreMultiplier>1.1</StoreMultiplier>
+    <StoreTimerDivision>5</StoreTimerDivision>
+    <StoreCount>0</StoreCount>
   </store>
 </gamedata>

@@ -56,6 +56,19 @@ public class LoadGameData : MonoBehaviour
                     storeobj.StoreTimer = float.Parse(StoreNode.InnerText);
                 }
 
+                if (StoreNode.Name == "StoreMultiplier")
+                {
+                    storeobj.StoreMultiplier = float.Parse(StoreNode.InnerText);
+                }
+                if (StoreNode.Name == "StoreTimerDivision")
+                {
+                    storeobj.StoreTimerDivision = int.Parse(StoreNode.InnerText);
+                }
+                if (StoreNode.Name == "StoreCount")
+                {
+                    storeobj.StoreCount = int.Parse(StoreNode.InnerText);
+                }
+
                 NewStore.transform.SetParent(StorePanel.transform);
             }
         }
