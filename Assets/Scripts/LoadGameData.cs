@@ -37,6 +37,12 @@ public class LoadGameData : MonoBehaviour
                     Text StoreText = NewStore.transform.Find("StoreNameText").GetComponent<Text>();
                     StoreText.text = StoreNode.InnerText;
                 }
+                if (StoreNode.Name == "image")
+                {
+                    Sprite newSprite = Resources.Load<Sprite>(StoreNode.InnerText);
+                    Image StoreImage = NewStore.transform.Find("ImageButtonClick").GetComponent<Image>();
+                    StoreImage.sprite = newSprite;
+                }
                 if (StoreNode.Name == "BaseStoreCost")
                 {
                     storeobj.BaseStoreCost = float.Parse(StoreNode.InnerText);

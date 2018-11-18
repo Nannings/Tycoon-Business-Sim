@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 114896067826363166}
   - component: {fileID: 114303771941168768}
   m_Layer: 5
-  m_Name: StoreClickButton
+  m_Name: ImageButtonClick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -265,6 +265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseStoreCost: 2
   BaseStoreProfit: 0.75
+  StoreTimer: 4
   StoreCount: 0
   ManagerUnlocked: 0
   StoreMultiplier: 1.1
