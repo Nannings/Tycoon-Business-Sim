@@ -13,7 +13,6 @@ public class gamemanager : MonoBehaviour
 
     private void Start()
     {
-        CurrentBalance = 6.00f;
         if (OnUpdateBalance != null)
             OnUpdateBalance();
     }

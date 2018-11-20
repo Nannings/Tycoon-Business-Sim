@@ -1,4 +1,5 @@
 ﻿<gamedata>
+  <StartingBalance>6</StartingBalance>
   <store>
     <name>Hotel</name>
     <BaseStoreCost>1.5</BaseStoreCost>

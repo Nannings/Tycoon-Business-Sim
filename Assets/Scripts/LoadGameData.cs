@@ -27,6 +27,9 @@ public class LoadGameData : MonoBehaviour
 
         xmlDoc.LoadXml(GameData.text);
 
+        XmlNodeList StartingBalanceNode = xmlDoc.GetElementsByTagName("StartingBalance");
+        gamemanager.instance.AddToBalance(float.Parse(StartingBalanceNode[0].InnerText));
+
         XmlNodeList StoreList = xmlDoc.GetElementsByTagName("store");
 
         foreach (XmlNode StoreInfo in StoreList)
