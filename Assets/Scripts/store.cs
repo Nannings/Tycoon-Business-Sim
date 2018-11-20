@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,7 +21,6 @@ public class store : MonoBehaviour
     private void Start()
     {
         StartTimer = false;
-        NextStoreCost = BaseStoreCost;
     }
 
     public float GetNextStoreCost()
@@ -69,5 +69,10 @@ public class store : MonoBehaviour
     {
         if (!StartTimer && StoreCount > 0)
             StartTimer = true;
+    }
+
+    public void SetNextStoreCost(float baseStoreCost)
+    {
+        NextStoreCost = baseStoreCost;
     }
 }

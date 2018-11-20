@@ -16,11 +16,13 @@ public class UIStore : MonoBehaviour
     private void OnEnable()
     {
         gamemanager.OnUpdateBalance += UpdateUI;
+        LoadGameData.OnLoadDataComplete += UpdateUI;
     }
 
     private void OnDisable()
     {
         gamemanager.OnUpdateBalance -= UpdateUI;
+        LoadGameData.OnLoadDataComplete -= UpdateUI;
     }
 
     private void Awake()

@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class LoadGameData : MonoBehaviour
 {
+
+    public delegate void LoadDataComplete();
+    public static event LoadDataComplete OnLoadDataComplete;
+
     public TextAsset GameData;
     public GameObject StorePrefab;
     public GameObject StorePanel;
@@ -13,6 +17,8 @@ public class LoadGameData : MonoBehaviour
     private void Start()
     {
         LoadData();
+        if (OnLoadDataComplete != null)
+            OnLoadDataComplete();
     }
 
     public void LoadData()
@@ -69,6 +75,7 @@ public class LoadGameData : MonoBehaviour
                     storeobj.StoreCount = int.Parse(StoreNode.InnerText);
                 }
 
+                storeobj.SetNextStoreCost(storeobj.BaseStoreCost);
                 NewStore.transform.SetParent(StorePanel.transform);
             }
         }
