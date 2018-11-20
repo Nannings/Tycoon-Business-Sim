@@ -10,6 +10,7 @@ public class gamemanager : MonoBehaviour
 
     public static gamemanager instance;
     float CurrentBalance;
+    public string CompanyName;
 
     private void Start()
     {

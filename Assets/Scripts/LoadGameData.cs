@@ -13,6 +13,7 @@ public class LoadGameData : MonoBehaviour
     public TextAsset GameData;
     public GameObject StorePrefab;
     public GameObject StorePanel;
+    public Text CompanyNameText;
 
     private void Start()
     {
@@ -27,8 +28,11 @@ public class LoadGameData : MonoBehaviour
 
         xmlDoc.LoadXml(GameData.text);
 
-        XmlNodeList StartingBalanceNode = xmlDoc.GetElementsByTagName("StartingBalance");
-        gamemanager.instance.AddToBalance(float.Parse(StartingBalanceNode[0].InnerText));
+        float StartingBalanceNode = float.Parse(xmlDoc.GetElementsByTagName("StartingBalance")[0].InnerText);
+        gamemanager.instance.AddToBalance(StartingBalanceNode);
+
+        string CompanyName = xmlDoc.GetElementsByTagName("CompanyName")[0].InnerText;
+        gamemanager.instance.CompanyName = CompanyName;
 
         XmlNodeList StoreList = xmlDoc.GetElementsByTagName("store");
 
