@@ -281,7 +281,9 @@ MonoBehaviour:
   StorePrefab: {fileID: 1953211569057458, guid: a2716cf5188960741939b2b57eb2dc10,
     type: 2}
   StorePanel: {fileID: 1876422418}
-  CompanyNameText: {fileID: 1001159725}
+  ManagerPanel: {fileID: 1318601824}
+  ManagerPrefab: {fileID: 1701754370637870, guid: 526b8e7131eb1ea4680362ca6139ebdf,
+    type: 2}
 --- !u!1 &466870776
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,9 +623,9 @@ MonoBehaviour:
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
-  m_StartAxis: 0
+  m_StartAxis: 1
   m_CellSize: {x: 200, y: 100}
-  m_Spacing: {x: 0, y: 0}
+  m_Spacing: {x: 20, y: 20}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!114 &1318601827

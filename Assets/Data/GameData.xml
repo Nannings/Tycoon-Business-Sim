@@ -10,6 +10,8 @@
     <StoreMultiplier>1.1</StoreMultiplier>
     <StoreTimerDivision>5</StoreTimerDivision>
     <StoreCount>1</StoreCount>
+    <ManagerCost>5</ManagerCost>
+    <ManagerName>Bob Smith</ManagerName>
   </store>
   <store>
     <name>Supermarket</name>
@@ -20,5 +22,7 @@
     <StoreMultiplier>1.1</StoreMultiplier>
     <StoreTimerDivision>5</StoreTimerDivision>
     <StoreCount>0</StoreCount>
+    <ManagerCost>10</ManagerCost>
+    <ManagerName>Sinterklaas</ManagerName>
   </store>
 </gamedata>

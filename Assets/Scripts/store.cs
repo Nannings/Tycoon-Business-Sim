@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class store : MonoBehaviour
 {
+    public string StoreName;
     public float BaseStoreCost;
     public float BaseStoreProfit;
     public float StoreTimer;
@@ -16,6 +17,7 @@ public class store : MonoBehaviour
     public int StoreTimerDivision;
     float NextStoreCost;
     float CurrentTimer = 0;
+    public float ManagerCost;
     public bool StartTimer;
 
     private void Start()

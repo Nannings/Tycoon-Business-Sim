@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
 using UnityEngine;
@@ -13,7 +14,9 @@ public class LoadGameData : MonoBehaviour
     public TextAsset GameData;
     public GameObject StorePrefab;
     public GameObject StorePanel;
-    public Text CompanyNameText;
+
+    public GameObject ManagerPanel;
+    public GameObject ManagerPrefab;
 
     private void Start()
     {
@@ -33,7 +36,7 @@ public class LoadGameData : MonoBehaviour
         LoadStores(xmlDoc);
     }
 
-    private static void LoadGameManagerData(XmlDocument xmlDoc)
+    private void LoadGameManagerData(XmlDocument xmlDoc)
     {
         float StartingBalanceNode = float.Parse(xmlDoc.GetElementsByTagName("StartingBalance")[0].InnerText);
         gamemanager.instance.AddToBalance(StartingBalanceNode);
@@ -51,7 +54,6 @@ public class LoadGameData : MonoBehaviour
             LoadStoreNodes(StoreInfo);
         }
     }
-
     private void LoadStoreNodes(XmlNode StoreInfo)
     {
         GameObject NewStore = (GameObject)Instantiate(StorePrefab);
@@ -68,12 +70,13 @@ public class LoadGameData : MonoBehaviour
         NewStore.transform.SetParent(StorePanel.transform);
     }
 
-    private static void SetStoreObj(GameObject NewStore, store storeobj, XmlNode StoreNode)
+    private void SetStoreObj(GameObject NewStore, store storeobj, XmlNode StoreNode)
     {
         if (StoreNode.Name == "name")
         {
             Text StoreText = NewStore.transform.Find("StoreNameText").GetComponent<Text>();
             StoreText.text = StoreNode.InnerText;
+            storeobj.StoreName = StoreNode.InnerText;
         }
         if (StoreNode.Name == "image")
         {
@@ -106,5 +109,21 @@ public class LoadGameData : MonoBehaviour
         {
             storeobj.StoreCount = int.Parse(StoreNode.InnerText);
         }
+        if (StoreNode.Name == "ManagerCost")
+        {
+            CreateManager(StoreNode, storeobj);
+        }
+    }
+
+    private void CreateManager(XmlNode StoreNode, store storeobj)
+    {
+        GameObject NewManager = Instantiate(ManagerPrefab);
+        NewManager.transform.SetParent(ManagerPanel.transform);
+        Text ManagerNameText = NewManager.transform.Find("ManagerNameText").GetComponent<Text>();
+        ManagerNameText.text = storeobj.StoreName;
+        storeobj.ManagerCost = float.Parse(StoreNode.InnerText);
+        Button ManagerButton = NewManager.transform.Find("UnlockManagerButton").GetComponent<Button>();
+        Text ButtonText = ManagerButton.transform.Find("UnlockManagerButtonText").GetComponent<Text>();
+        ButtonText.text = "Unlock " + storeobj.ManagerCost.ToString("C2");
     }
 }
