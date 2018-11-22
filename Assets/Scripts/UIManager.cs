@@ -5,18 +5,51 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    public enum State
+    {
+        Main,
+        Managers
+    }
+
     public Text CurrentBalanceText;
     public Text CompanyNameText;
 
+    public State CurrentState;
+    public GameObject ManagerPanel;
+
     private void Start()
     {
-        UpdateUI();
+        CurrentState = State.Main;
     }
 
     private void OnEnable()
     {
         gamemanager.OnUpdateBalance += UpdateUI;
         LoadGameData.OnLoadDataComplete += UpdateUI;
+    }
+
+    void onShowManagers()
+    {
+        CurrentState = State.Managers;
+        ManagerPanel.SetActive(true);
+    }
+
+    void onShowMain()
+    {
+        CurrentState = State.Main;
+        ManagerPanel.SetActive(false);
+    }
+
+    public void onClickManagers()
+    {
+        if (CurrentState == State.Main)
+        {
+            onShowManagers();
+        }
+        else
+        {
+            onShowMain();
+        }
     }
 
     private void OnDisable()
