@@ -128,5 +128,6 @@ public class LoadGameData : MonoBehaviour
 
         UIStore UIManager = storeobj.transform.GetComponent<UIStore>();
         UIManager.ManagerButton = ManagerButton;
+        ManagerButton.onClick.AddListener(storeobj.UnlockManager);
     }
 }

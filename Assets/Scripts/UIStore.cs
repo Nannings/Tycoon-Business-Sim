@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,12 +20,23 @@ public class UIStore : MonoBehaviour
     {
         gamemanager.OnUpdateBalance += UpdateUI;
         LoadGameData.OnLoadDataComplete += UpdateUI;
+        store.OnManagerUnlocked += ManagerUnlocked;
+    }
+
+    private void ManagerUnlocked()
+    {
+        if (Store.ManagerUnlocked)
+        {
+            Text ButtonText = ManagerButton.transform.Find("UnlockManagerButtonText").GetComponent<Text>();
+            ButtonText.text = "PURCHASED";
+        }
     }
 
     private void OnDisable()
     {
         gamemanager.OnUpdateBalance -= UpdateUI;
         LoadGameData.OnLoadDataComplete -= UpdateUI;
+        store.OnManagerUnlocked -= ManagerUnlocked;
     }
 
     private void Awake()
@@ -68,7 +80,6 @@ public class UIStore : MonoBehaviour
             ManagerButton.interactable = true;
         else
             ManagerButton.interactable = false;
-        //Text ButtonText = ManagerButton.transform.Find("UnlockManagerButtonText").GetComponent<Text>();
     }
 
     public void BuyStoreOnClick()
