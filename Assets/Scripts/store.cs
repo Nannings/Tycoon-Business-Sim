@@ -6,9 +6,6 @@ using UnityEngine.UI;
 
 public class store : MonoBehaviour
 {
-    public delegate void ManagerUnlockDelegate();
-    public static event ManagerUnlockDelegate OnManagerUnlocked;
-
     public string StoreName;
     public float BaseStoreCost;
     public float BaseStoreProfit;
@@ -89,8 +86,7 @@ public class store : MonoBehaviour
         {
             gamemanager.instance.AddToBalance(-ManagerCost);
             ManagerUnlocked = true;
-            if (OnManagerUnlocked != null)
-                OnManagerUnlocked();
+            GetComponent<UIStore>().ManagerUnlocked();
         }
     }
 }

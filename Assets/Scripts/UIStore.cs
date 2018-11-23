@@ -20,23 +20,18 @@ public class UIStore : MonoBehaviour
     {
         gamemanager.OnUpdateBalance += UpdateUI;
         LoadGameData.OnLoadDataComplete += UpdateUI;
-        store.OnManagerUnlocked += ManagerUnlocked;
     }
 
-    private void ManagerUnlocked()
+    public void ManagerUnlocked()
     {
-        if (Store.ManagerUnlocked)
-        {
-            Text ButtonText = ManagerButton.transform.Find("UnlockManagerButtonText").GetComponent<Text>();
-            ButtonText.text = "PURCHASED";
-        }
+        Text ButtonText = ManagerButton.transform.Find("UnlockManagerButtonText").GetComponent<Text>();
+        ButtonText.text = "PURCHASED";
     }
 
     private void OnDisable()
     {
         gamemanager.OnUpdateBalance -= UpdateUI;
         LoadGameData.OnLoadDataComplete -= UpdateUI;
-        store.OnManagerUnlocked -= ManagerUnlocked;
     }
 
     private void Awake()
@@ -76,7 +71,7 @@ public class UIStore : MonoBehaviour
 
         BuyButtonText.text = "Buy " + Store.GetNextStoreCost().ToString("C2");
 
-        if (gamemanager.instance.CanBuy(Store.ManagerCost))
+        if (!Store.ManagerUnlocked && gamemanager.instance.CanBuy(Store.ManagerCost))
             ManagerButton.interactable = true;
         else
             ManagerButton.interactable = false;
