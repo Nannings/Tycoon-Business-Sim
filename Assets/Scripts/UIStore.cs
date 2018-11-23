@@ -13,6 +13,8 @@ public class UIStore : MonoBehaviour
 
     public store Store;
 
+    public Button ManagerButton;
+
     private void OnEnable()
     {
         gamemanager.OnUpdateBalance += UpdateUI;
@@ -61,6 +63,12 @@ public class UIStore : MonoBehaviour
             BuyButton.interactable = false;
 
         BuyButtonText.text = "Buy " + Store.GetNextStoreCost().ToString("C2");
+
+        if (gamemanager.instance.CanBuy(Store.ManagerCost))
+            ManagerButton.interactable = true;
+        else
+            ManagerButton.interactable = false;
+        //Text ButtonText = ManagerButton.transform.Find("UnlockManagerButtonText").GetComponent<Text>();
     }
 
     public void BuyStoreOnClick()

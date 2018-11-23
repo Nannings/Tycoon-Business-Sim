@@ -77,4 +77,13 @@ public class store : MonoBehaviour
     {
         NextStoreCost = baseStoreCost;
     }
+
+    public void UnlockManager()
+    {
+        if (ManagerUnlocked)
+            return;
+
+        gamemanager.instance.AddToBalance(-ManagerCost);
+        ManagerUnlocked = true;
+    }
 }
